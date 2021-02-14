@@ -3,14 +3,16 @@
 # First of all install these programs:
 
 **Initial steps**:
-sudo apt install i3
-sudo apt install i3blocks
-sudo apt install vim
-sudo apt install pactl
-**Installing Player CTL** 
-*This will enable media buttons such as volume, touchpad etc.
-Install playerctl (if you don't have it yet)
-You can verify if tou have it downloaded by typing in the command line: `playerctl --help`
+```
+#sudo apt install i3
+#sudo apt install i3blocks
+#sudo apt install vim
+#sudo apt install pactl
+```
+#**Installing Player CTL** 
+#*This will enable media buttons such as volume, touchpad etc.
+#Install playerctl (if you don't have it yet)
+#You can verify if tou have it downloaded by typing in the command line: `playerctl --help`
 
 If you do not have it, here is the link:
 
