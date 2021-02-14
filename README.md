@@ -1,6 +1,6 @@
 # i3dotfiles
 
-# First of all install these programs:
+*Requirements:
 
 **Initial steps**:
 ```
