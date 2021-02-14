@@ -1,3 +1,7 @@
+1. [Requirements](#Requirements)
+2. [Installing PlayerCTL](#InstallingPlayerCTL)
+3. [Toggling touchpad](#Toggling-the-touchpad)
+4. [Setting custom Wallpaper](#Setting-custom-Wallpaper)
 
 # Requirements:
 
