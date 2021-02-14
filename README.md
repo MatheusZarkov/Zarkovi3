@@ -1,11 +1,24 @@
+# Table of Contents
 1. [Requirements](#Requirements)
 2. [Installing PlayerCTL](#Installing-Player-CTL)
 3. [Toggling touchpad](#Toggling-the-touchpad)
 4. [Setting custom Wallpaper](#Setting-custom-Wallpaper)
 
+<details><summary>Checklist</summary>
+<p>
+
+> Come back to this checklist below after you have installed all the requirement items
+
+ - [ ] Install all the requirements
+ - [ ] Make a folder inside your Downloads folder called Wallpapers
+ - [ ] Modify the path for the `feh` application in the configs folder
+ - [ ] Place the shellscript of the [TouchpadToggler](#Toggling-the-touchpad) In home/user/.config/i3. Also change it in the i3 config archive.
+</p>
+</details>
+
 # Requirements:
 
-## Installing the programms needed:
+## Installing the programs needed:
 
 ```
 sudo apt install i3
@@ -14,6 +27,7 @@ sudo apt install vim
 sudo apt install pactl
 sudo apt install i3status 
 sudo apt install suckless-tools
+sudo apt install feh
 ```
 
 ## Installing PlayerCTL
@@ -44,7 +58,7 @@ Or `xev`, an interactive tool for finding key symbols:
 `xev`
 
 ## Toggling the touchpad
-The script **[toggletouchpad.sh](http://toggletouchpad.sh)** for toggling your touchpad should have following content:
+The script **[toggletouchpad.sh](http://toggletouchpad.sh)** for toggling your touchpad should have the following content:
 
 ```bash
 #!/bin/bash
@@ -77,4 +91,6 @@ Just download a tool called `Arandr`
 ```bash
 sudo apt install arandr
 ```
+It would be too complicated to explain this in text, [This Video](https://youtu.be/8-S0cWnLBKg?t=921) does it in a easy way and superfast, also the link goes straight to the point it shows how to do it.
 
+---
