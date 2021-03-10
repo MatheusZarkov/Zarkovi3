@@ -53,7 +53,7 @@ module-margin-right = 2
 
 separator = |
 
-font-0 = fixed:pixelsize=10;1 ; Display the numbers
+font-0 = System San Francisco:pixelsize=9;2 ; Display the numbers
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0 ; Display Volume and other things
 font-2 = siji:pixelsize=10;1 ; Display the icons 
 font-3 = Font Awesome 5 Free:pixelsize=12;2
