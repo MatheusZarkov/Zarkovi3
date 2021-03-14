@@ -2,6 +2,7 @@
 
 
 
+pacman -S xorg --ignore xorg-server-xdmx
 
 sudo pacman-mirrors --fasttrack --noconfirm ; sudo pacman -Syyu --noconfirm ; sudo systemctl enable fstrim.timer ; sudo pacman -Syu firewalld --noconfirm; sudo systemctl enable --now firewalld.service ; sudo pacman -S git --noconfirm; sudo snap install brave --noconfirm; sudo pacman -S base-devel --noconfirm; sudo pacman -S yay --noconfirm;
 
