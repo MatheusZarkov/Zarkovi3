@@ -32,8 +32,8 @@ sudo pacman -S python-pip &&
 sudo pacman -S flameshot --noconfirm &&
 sudo pacman -S git --noconfirm &&
 git clone https://github.com/MatheusZarkov/Zarkovi3.git &&
-sudo mkdir $HOME/.config/i3 &&
-sudo cp ~/Downloads/Zarkovi3/i3/config/config ~/.config/i3/ &&
+sudo mkdir "$HOME/.config/i3" &&
+sudo cp "$HOME/Downloads/Zarkovi3/i3/config/config" "~/.config/i3/" &&
 
 
 ## Instalando dependencias Java
@@ -50,7 +50,7 @@ sudo pacman -S gimp --noconfirm
 
 ## Installing vim. Pluggins are going to be in ~/.vim/plugged
 sudo pacman -S vim --noconfirm &&
-sudo mkdir $HOME/.vim/plugged &&
+sudo mkdir "$HOME/.vim/plugged" &&
 ## Installing python3
 sudo pacman -S python3 --noconfirm &&
 sudo pacman -S pip --noconfirm &&
@@ -59,20 +59,20 @@ sudo pacman -S pip --noconfirm &&
 loadkeys br-abnt2 --noconfirm
 
 ## Installing fonts
-sudo mkdir .fonts &&
+sudo mkdir "$HOME/.fonts" &&
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-brands-400.ttf ~/.fonts &&
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-solid-900.ttf ~/.fonts &&
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-regular-400.ttf ~/.fonts &&
-sudo mv $HOME/Downloads/Zarkovi3/polybar/fonts/*.ttf $HOME/.fonts &&
+sudo mv "$HOME/Downloads/Zarkovi3/polybar/fonts/*.ttf" "$HOME/.fonts" &&
 sudo pacman -S xorg-fonts-misc --noconfirm &&
 yay -S siji-git ttf-unifont --noconfirm &&
 
 ## Installing polybar
 yay -S polybar --noconfirm &&
-mkdir $HOME/.config/polybar &&
-sudo cp $HOME/Downloads/Zarkovi3/polybar/launch.sh $HOME/.config/polybar/ &&
-sudo cp $HOME/Downloads/Zarkovi3/polybar/config $HOME/.config/polybar/ &&
-sudo chmod +x $HOME/.config/polybar/launch.sh &&
+mkdir "$HOME/.config/polybar" &&
+sudo cp "$HOME/Downloads/Zarkovi3/polybar/launch.sh" "$HOME/.config/polybar/" &&
+sudo cp "$HOME/Downloads/Zarkovi3/polybar/config" "$HOME/.config/polybar/" &&
+sudo chmod +x "$HOME/.config/polybar/launch.sh" &&
 
 ## Instalando bash Snippets ##
 git clone https://github.com/alexanderepstein/Bash-Snippets
@@ -91,7 +91,7 @@ sudo snap install qsnapstore --noconfirm &&
 ## Installing Picom ##
 
 yay -S picom-tryone-git &&
-sudo mkdir $HOME/.config/picom &&
+sudo mkdir "$HOME/.config/picom" &&
 
 
 ## Installing Lxappearence ##
@@ -99,12 +99,13 @@ sudo pacman -S lxappearance --noconfirm &&
 
 ## Changing gtk font and appearance ##
 
-sudo cp $HOME/Downloads/Zarkovi3/GTK/.gtkrc-2.0 $HOME/ &&
-sudo cp $HOME/Downloads/Zarkovi3/GTK/settings.ini $HOME/.config/gtk-3.0 &&
+sudo cp "$HOME/Downloads/Zarkovi3/GTK/.gtkrc-2.0" "$HOME/" &&
+sudo mkdir "$HOME/.config/gtk-3.0"
+sudo cp "$HOME/Downloads/Zarkovi3/GTK/settings.ini" "$HOME/.config/gtk-3.0" &&
 
 ## Upgrade final ##
 
-sudo pacman -Syu
+sudo pacman -Syu &&
 
 ## Installing rust ##
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
