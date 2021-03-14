@@ -1,5 +1,5 @@
 #!/bin/bash
-
+mkdir /home/$usuario/.vim/plugged
 
 
 pacman -S xorg --ignore xorg-server-xdmx
