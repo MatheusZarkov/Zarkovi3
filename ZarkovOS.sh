@@ -1,4 +1,6 @@
 #!/bin/bash
+
+usuario=$(whoami)
 mkdir /home/$usuario/.vim/plugged
 
 
