@@ -6,14 +6,10 @@ pacman -S xorg --ignore xorg-server-xdmx
 ## Installing yay
 git clone https://aur.archlinux.org/yay.git
 cd yay/
-makepkg -si --noconfirm
+makepkg -si
 
-sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
+sudo pacman -S --noconfirm adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
 sudo pacman-optimize --noconfirm
-## Firewall 
-sudo pacman -S ufw --noconfirm
-sudo ufw enable
-sudo systemctl enable ufw.service
 
 # Installing fakeroot
 sudo pacman -S binutils --noconfirm
@@ -36,7 +32,6 @@ sudo pacman -S nitrogen --noconfirm
 ## Installing brave
 sudo snap install brave --noconfirm
 
- 
 # Installing Needed programs #
 sudo pacman -S nautilus --noconfirm
 sudo pacman -S xrandr --noconfirm
