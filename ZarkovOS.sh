@@ -12,7 +12,6 @@ makepkg -si --noconfirm
 sudo pacman -Syu firewalld --noconfirm
 sudo systemctl enable --now firewalld.service 
 ## Installing some dependencies
-sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
 
 # Installing fakeroot
 sudo pacman -S binutils --noconfirm
@@ -45,8 +44,7 @@ sudo pacman -S python-pip
 sudo pacman -S flameshot --noconfirm
 sudo pacman -S git --noconfirm
 git clone https://github.com/MatheusZarkov/Zarkovi3.git
-sudo mkdir /home/$usuario/.config/i3
-sudo cp /home/$usuario/Downloads/Zarkovi3/i3/config/config /home/$usuario/.config/i3/
+
 
 ## Instalando dependencias Java
 sudo pacman -S java-runtime-common --noconfirm ; sudo pacman -S java-environment-common --noconfirm ;
@@ -71,20 +69,14 @@ sudo pacman -S pip --noconfirm
 loadkeys br-abnt2 --noconfirm
 
 ## Installing fonts
-sudo mkdir /home/$usuario/.fonts
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-brands-400.ttf ~/.fonts &&
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-solid-900.ttf ~/.fonts &&
 #sudo mv ~/Downloads/Zarkovi3/polybar/fonts/fa-regular-400.ttf ~/.fonts &&
-sudo mv /home/$usuario/Downloads/Zarkovi3/polybar/fonts/*.ttf /home/$usuario/.fonts
 sudo pacman -S xorg-fonts-misc --noconfirm
 yay -S siji-git ttf-unifont --noconfirm
 
 ## Installing polybar
 yay -S polybar --noconfirm
-mkdir /home/$usuario/.config/polybar
-sudo cp /home/$usuario/Downloads/Zarkovi3/polybar/launch.sh /home/$usuario/.config/polybar/
-sudo cp /home/$usuario/Downloads/Zarkovi3/polybar/config /home/$usuario/.config/polybar/
-sudo chmod +x /home/$usuario/.config/polybar/launch.sh
 ## Instalando bash Snippets ##
 git clone https://github.com/alexanderepstein/Bash-Snippets
 cd Bash-Snippets/
@@ -101,22 +93,30 @@ sudo snap install qsnapstore --noconfirm
 
 ## Installing Picom ##
 yay -S picom-tryone-git
-sudo mkdir /home/$usuario/.config/picom
 
 ## Installing Lxappearence ##
 sudo pacman -S lxappearance --noconfirm
 
-## Changing gtk font and appearance ##
-
-sudo cp /home/$usuario/Downloads/Zarkovi3/GTK/.gtkrc-2.0 /home/$usuario
-sudo mkdir /home/$usuario/.config/gtk-3.0
-sudo cp -f /home/$usuario/Downloads/Zarkovi3/GTK/settings.ini /home/$usuario/.config/gtk-3.0
-
-## Installing alacritty
-git clone https://github.com/alacritty/alacritty
 
 ## Upgrade final ##
 sudo pacman -Syu --noconfirm
 
 ## Installing rust ##
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup override set stable
+rustup update stable
+
+## Installing alacritty
+sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb alacritty --noconfirm
+git clone https://github.com/alacritty/alacritty/
+mkdir -p ${ZDOTDIR:-~}/.zsh_functions
+echo 'fpath+=${ZDOTDIR:-~}/.zsh_functions' >> ${ZDOTDIR:-~}/.zshrc
+cp /home/$usuario/Downloads/Zarkovi3/alacritty/extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
+
+## Installing Flavours
+yay -S flavours --noconfirm
+flavours update all
+
+sudo cp -r /home/$usuario/Downloads/Zarkovi3/.config /home/$usuario/
+sudo cp -r /home/$usuario/Downloads/Zarkovi3/.fonts /home/$usuario/
+sudo cp -r /home/$usuario/Downloads/Zarkovi3/.gtkrc-2.0 /home/$usuario/
