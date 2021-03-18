@@ -1,15 +1,18 @@
 #!/bin/bash
 
 usuario=$(whoami)
-sudo pacman --noconfirm -Syu git base-devel firewalld systemctl enable fstrim.timer 
+sudo pacman --noconfirm -Syu git base-devel 
 pacman -S xorg --ignore xorg-server-xdmx
 ## Installing yay
 git clone https://aur.archlinux.org/yay.git
 cd yay/
-makepkg -si
+makepkg -si --noconfirm
 
-sudo pacman -S --noconfirm adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
-sudo pacman-optimize --noconfirm
+## Enabling firewall
+sudo pacman -Syu firewalld --noconfirm
+sudo systemctl enable --now firewalld.service 
+## Installing some dependencies
+sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
 
 # Installing fakeroot
 sudo pacman -S binutils --noconfirm
@@ -32,6 +35,7 @@ sudo pacman -S nitrogen --noconfirm
 ## Installing brave
 sudo snap install brave --noconfirm
 
+ 
 # Installing Needed programs #
 sudo pacman -S nautilus --noconfirm
 sudo pacman -S xrandr --noconfirm
