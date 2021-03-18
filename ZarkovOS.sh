@@ -1,8 +1,19 @@
 #!/bin/bash
 
 usuario=$(whoami)
+sudo pacman --noconfirm -Syu git base-devel firewalld systemctl enable fstrim.timer 
 pacman -S xorg --ignore xorg-server-xdmx
-sudo pacman-mirrors --fasttrack --noconfirm ; sudo pacman -Syyu --noconfirm ; sudo systemctl enable fstrim.timer ; sudo pacman -Syu firewalld --noconfirm; sudo systemctl enable --now firewalld.service ; sudo pacman -S git --noconfirm; sudo snap install brave --noconfirm; sudo pacman -S base-devel --noconfirm; sudo pacman -S yay --noconfirm;
+## Installing yay
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si --noconfirm
+
+sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good hunspell-en icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
+sudo pacman-optimize --noconfirm
+## Firewall 
+sudo pacman -S ufw --noconfirm
+sudo ufw enable
+sudo systemctl enable ufw.service
 
 # Installing fakeroot
 sudo pacman -S binutils --noconfirm
@@ -21,6 +32,10 @@ sudo pacman -S dmenu --noconfirm
 
 # Wallpaper manager i3 #
 sudo pacman -S nitrogen --noconfirm
+
+## Installing brave
+sudo snap install brave --noconfirm
+
  
 # Installing Needed programs #
 sudo pacman -S nautilus --noconfirm
@@ -98,8 +113,11 @@ sudo cp /home/$usuario/Downloads/Zarkovi3/GTK/.gtkrc-2.0 /home/$usuario
 sudo mkdir /home/$usuario/.config/gtk-3.0
 sudo cp -f /home/$usuario/Downloads/Zarkovi3/GTK/settings.ini /home/$usuario/.config/gtk-3.0
 
+## Installing alacritty
+git clone https://github.com/alacritty/alacritty
+
 ## Upgrade final ##
-sudo pacman -Syu &&
+sudo pacman -Syu --noconfirm
 
 ## Installing rust ##
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
